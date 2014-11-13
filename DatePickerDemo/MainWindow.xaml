@@ -1,0 +1,28 @@
+﻿<Window xmlns:Helpers="clr-namespace:DevExpress.DemoData.Helpers;assembly=DevExpress.DemoData.v12.2.Core"  xmlns:my="clr-namespace:DevExpress.Xpf.Controls;assembly=DevExpress.Xpf.Controls.v12.2"  x:Class="DatePickerDemo.MainWindow"
+        xmlns:toolkit="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:DatePickerDemo"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <DatePicker x:Name="datePickerCtl" Width="200" Height="25" SelectedDateFormat="Long"
+                        FirstDayOfWeek="Monday"
+                        IsTodayHighlighted="False" Margin="0,10" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <DatePicker.Resources>
+                    <Style TargetType="DatePickerTextBox">
+                        <Setter Property="IsReadOnly" Value="True" />
+                    </Style>
+                </DatePicker.Resources>
+                <DatePicker.BlackoutDates>
+                </DatePicker.BlackoutDates>
+            </DatePicker>
+            <Calendar x:Name="calender" Margin="0,0,0,10" HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                      FirstDayOfWeek="Monday" SelectionMode="SingleDate" IsTodayHighlighted="False"
+                      SelectedDate="{x:Static sys:DateTime.Now}" />
+            <toolkit:DateTimePicker  x:Name="dateTimePicker" Margin="0,10" Width="200" TimeFormatString="MM/dd/yyyy HH:mm:ss"/>
+            
+        </StackPanel>
+    </Grid>
+</Window>
